@@ -8,7 +8,7 @@ settlement_locations = [] # there are 53 possible locations
 
 class Board():
     def __init__(self):
-        self.tiles = []
+        self.tiles = list()
         self.generate_initial_positions()
         self.settlements = []
         self.roads = []
