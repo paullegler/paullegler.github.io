@@ -1,6 +1,9 @@
 var canvas = document.getElementById("Board");
 var cxt = canvas.getContext("2d");
 
+cxt.rotate(90 * Math.PI/180)
+
+
 // hexagon
 function drawHex(size, xcenter, ycenter) {
   var numberOfSides = 6,
@@ -20,5 +23,34 @@ function drawHex(size, xcenter, ycenter) {
   cxt.stroke();
 }
 
-drawHex(100, 200, 200)
-drawHex(100, 300, 300)
+// To go 1 right is 0, -87
+// To go to bottom left +75, +43
+
+// Row 1
+drawHex(50, 200, -290)
+drawHex(50, 200, -377)
+drawHex(50, 200, -464)
+
+// Row 2
+drawHex(50, 275, -247)
+drawHex(50, 275, -334)
+drawHex(50, 275, -421)
+drawHex(50, 275, -508)
+
+// Row 3
+drawHex(50, 350, -203)
+drawHex(50, 350, -290)
+drawHex(50, 350, -377)
+drawHex(50, 350, -464)
+drawHex(50, 350, -551)
+
+// Row 4
+drawHex(50, 425, -247)
+drawHex(50, 425, -334)
+drawHex(50, 425, -421)
+drawHex(50, 425, -508)
+
+// Row 5
+drawHex(50, 500, -290)
+drawHex(50, 500, -377)
+drawHex(50, 500, -464)
