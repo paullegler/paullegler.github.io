@@ -27,30 +27,36 @@ function drawHex(size, xcenter, ycenter) {
 // To go to bottom left +75, +43
 
 // Row 1
-drawHex(50, 200, -290)
-drawHex(50, 200, -377)
-drawHex(50, 200, -464)
+drawHex(50, 200, -290);
+drawHex(50, 200, -377);
+drawHex(50, 200, -464);
 
 // Row 2
-drawHex(50, 275, -247)
-drawHex(50, 275, -334)
-drawHex(50, 275, -421)
-drawHex(50, 275, -508)
+drawHex(50, 275, -247);
+drawHex(50, 275, -334);
+drawHex(50, 275, -421);
+drawHex(50, 275, -508);
 
 // Row 3
-drawHex(50, 350, -203)
-drawHex(50, 350, -290)
-drawHex(50, 350, -377)
-drawHex(50, 350, -464)
-drawHex(50, 350, -551)
+drawHex(50, 350, -203);
+drawHex(50, 350, -290);
+drawHex(50, 350, -377);
+drawHex(50, 350, -464);
+drawHex(50, 350, -551);
 
 // Row 4
-drawHex(50, 425, -247)
-drawHex(50, 425, -334)
-drawHex(50, 425, -421)
-drawHex(50, 425, -508)
+drawHex(50, 425, -247);
+drawHex(50, 425, -334);
+drawHex(50, 425, -421);
+drawHex(50, 425, -508);
 
 // Row 5
-drawHex(50, 500, -290)
-drawHex(50, 500, -377)
-drawHex(50, 500, -464)
+drawHex(50, 500, -290);
+drawHex(50, 500, -377);
+drawHex(50, 500, -464);
+
+wheat_image = new Image();
+wheat_image.onload = function() {
+  cxt.drawImage(wheat_image, 200, -200, 200, 200);
+}
+wheat_image.src = "wheat.png"
