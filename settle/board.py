@@ -25,12 +25,16 @@ class Board():
         resources = np.concatenate((brick, ore, wheat, wood, sheep, desert))
         np.random.shuffle(resources)
 
-        index = 0
-        for i in len(range(resources)):
-            if resources[i] != "desert":
-                t = tile.Tile(neighbors[i], l[index])
-                self.tiles.append(t)
-                index = index + 1
-            else:
-                t = tile.Tile(neighbors[i], 0)
-                self.tiles.append(t)
+        return resources
+
+        # index = 0
+        # for i in len(range(resources)):
+        #     if resources[i] != "desert":
+        #         t = tile.Tile(neighbors[i], l[index])
+        #         self.tiles.append(t)
+        #         index = index + 1
+        #     else:
+        #         t = tile.Tile(neighbors[i], 0)
+        #         self.tiles.append(t)
+b = Board()
+print b.generate_initial_positions()
