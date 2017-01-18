@@ -27,75 +27,101 @@ function drawHex(size, xcenter, ycenter) {
 // To go to bottom left +75, +43
 
 // Row 1
-drawHex(50, 200, -290);
-drawHex(50, 200, -377);
-drawHex(50, 200, -464);
-
-// Row 2
-drawHex(50, 275, -247);
-drawHex(50, 275, -334);
-drawHex(50, 275, -421);
-drawHex(50, 275, -508);
-
-// Row 3
-drawHex(50, 350, -203);
-drawHex(50, 350, -290);
-drawHex(50, 350, -377);
-drawHex(50, 350, -464);
-drawHex(50, 350, -551);
-
-// Row 4
-drawHex(50, 425, -247);
-drawHex(50, 425, -334);
-drawHex(50, 425, -421);
-drawHex(50, 425, -508);
-
-// Row 5
-drawHex(50, 500, -290);
-drawHex(50, 500, -377);
-drawHex(50, 500, -464);
+// drawHex(50, 200, -290);
+// drawHex(50, 200, -377);
+// drawHex(50, 200, -464);
+//
+// // Row 2
+// drawHex(50, 275, -247);
+// drawHex(50, 275, -334);
+// drawHex(50, 275, -421);
+// drawHex(50, 275, -508);
+//
+// // Row 3
+// drawHex(50, 350, -203);
+// drawHex(50, 350, -290);
+// drawHex(50, 350, -377);
+// drawHex(50, 350, -464);
+// drawHex(50, 350, -551);
+//
+// // Row 4
+// drawHex(50, 425, -247);
+// drawHex(50, 425, -334);
+// drawHex(50, 425, -421);
+// drawHex(50, 425, -508);
+//
+// // Row 5
+// drawHex(50, 500, -290);
+// drawHex(50, 500, -377);
+// drawHex(50, 500, -464);
 
 function locate_spots() {
   wheat_image = new Image();
   wheat_image.onload = function() {
-    cxt.drawImage(wheat_image, 170, -320, 60, 60); // 0 a.k.a. the top left
-    cxt.drawImage(wheat_image, 170, -408, 60, 60); // 1
-    cxt.drawImage(wheat_image, 170, -496, 60, 60); // 2
+    cxt.drawImage(wheat_image, 70, -320, 180, 140); // 0 a.k.a. the top left
+    cxt.drawImage(wheat_image, 70, -447, 180, 140); // 1
+    cxt.drawImage(wheat_image, 70, -574, 180, 140); // 2
 
-    cxt.drawImage(wheat_image, 245, -277, 60, 60); // 11
-    cxt.drawImage(wheat_image, 245, -365, 60, 60); // 12
-    cxt.drawImage(wheat_image, 245, -453, 60, 60); // 13
-    cxt.drawImage(wheat_image, 245, -541, 60, 60); // 3
+    cxt.drawImage(wheat_image, 175, -257, 180, 140); // 11
+    cxt.drawImage(wheat_image, 175, -384, 180, 140); // 12
+    cxt.drawImage(wheat_image, 175, -511, 180, 140); // 13
+    cxt.drawImage(wheat_image, 175, -638, 180, 140); // 3
 
-    cxt.drawImage(wheat_image, 320, -233, 60, 60); // 10
-    cxt.drawImage(wheat_image, 320, -321, 60, 60); // 17
-    cxt.drawImage(wheat_image, 320, -409, 60, 60); // 18
-    cxt.drawImage(wheat_image, 320, -497, 60, 60); // 14
-    cxt.drawImage(wheat_image, 320, -585, 60, 60); // 4
+    cxt.drawImage(wheat_image, 280, -194, 180, 140); // 10
+    cxt.drawImage(wheat_image, 280, -321, 180, 140); // 17
+    cxt.drawImage(wheat_image, 280, -448, 180, 140); // 18
+    cxt.drawImage(wheat_image, 280, -575, 180, 140); // 14
+    cxt.drawImage(wheat_image, 280, -702, 180, 140); // 4
 
-    cxt.drawImage(wheat_image, 395, -277, 60, 60); // 9
-    cxt.drawImage(wheat_image, 395, -365, 60, 60); // 16
-    cxt.drawImage(wheat_image, 395, -453, 60, 60); // 15
-    cxt.drawImage(wheat_image, 395, -541, 60, 60); // 5
+    cxt.drawImage(wheat_image, 385, -257, 180, 140); // 9
+    cxt.drawImage(wheat_image, 385, -384, 180, 140); // 16
+    cxt.drawImage(wheat_image, 385, -511, 180, 140); // 15
+    cxt.drawImage(wheat_image, 385, -638, 180, 140); // 5
 
-    cxt.drawImage(wheat_image, 470, -320, 60, 60); // 8
-    cxt.drawImage(wheat_image, 470, -408, 60, 60); // 7
-    cxt.drawImage(wheat_image, 470, -496, 60, 60); // 6 a.k.a the bottom right
+    cxt.drawImage(wheat_image, 490, -320, 180, 140); // 8
+    cxt.drawImage(wheat_image, 490, -447, 180, 140); // 7
+    cxt.drawImage(wheat_image, 490, -574, 180, 140); // 6 a.k.a the bottom right
 
   }
   wheat_image.src = "brick.png";
 }
 
-// locate()
+// locate_spots()
 
 function create_board() {
-  resource_sizex = 60;
-  resource_sizey = 60;
+  // y_tp_ratio = 130 / 160.0
+  // scale = 160
+  resource_sizex = 180;
+  resource_sizey = 140;
   number_sizex = 30;
   number_sizey = 30;
 
-  var resource_locs = [[170, -320], [170, -408], [170, -496], [245, -541], [320, -585], [395, -541], [470, -496], [470, -408], [470, -320], [395, -277], [320, -233], [245, -277], [245, -365], [245, -453], [320, -497], [395, -453], [395, -365], [320, -321], [320, -409]];
-  var number_locs  = [[185, -305], [185, -393], [185, -481], [260, -526], [335, -570], [410, -526], [485, -481], [485, -393], [485, -305], [410, -262], [335, -218], [260, -262], [260, -350], [260, -438], [335, -482], [410, -438], [410, -350], [335, -306], [335, -394]];
+  var y = 70 // top left x
+  var x = -320 // top left y
+  start = [-320, -257, -194, -257, -320, 0]
+
+  var resource_locs = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+  var number_locs = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+
+  number_in_row = [3, 4, 5, 4, 3]
+
+  var j = 0
+  for (var row = 0; row < 5; row++) {
+    for (var tile = 0; tile < number_in_row[row]; tile++) {
+      resource_locs[j] = [y, x]
+      number_locs[j] = [y + 75, x + 55]
+      x = x - 127 // move to the right
+      j = j + 1
+    }
+    y = y + 105 // move down
+    x = start[row + 1]
+  }
+
+  console.log(resource_locs);
+
+
+  // var resource_locs = [[170, -320], [170, -448], [170, -570], [245, -541], [320, -585], [395, -541], [470, -496], [470, -408], [470, -320], [395, -277], [320, -233], [245, -277], [245, -365], [245, -453], [320, -497], [395, -453], [395, -365], [320, -321], [320, -409]];
+  // var number_locs  = [[145, -265], [185, -393], [185, -481], [260, -526], [335, -570], [410, -526], [485, -481], [485, -393], [485, -305], [410, -262], [335, -218], [260, -262], [260, -350], [260, -438], [335, -482], [410, -438], [410, -350], [335, -306], [335, -394]];
 
   var order = ['ore', 'sheep', 'wheat', 'ore', 'sheep', 'brick', 'wheat', 'wood', 'sheep', 'wheat', 'brick', 'desert', 'brick', 'wood', 'wood', 'sheep', 'wood', 'ore', 'wheat']
 
@@ -329,9 +355,7 @@ function create_board() {
       cxt.drawImage(eleven, elevens[1][0], elevens[1][1], number_sizex, number_sizey)
       cxt.drawImage(twelve, twelves[0][0], twelves[0][1], number_sizex, number_sizey)
     }
-
   }
-
   order = shuffle(order)
   drawResources(order)
 }
