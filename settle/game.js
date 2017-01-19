@@ -105,17 +105,21 @@ function create_board() {
 
   number_in_row = [3, 4, 5, 4, 3]
 
+  board_order = [0, 1, 2, 11, 12, 13, 3, 10, 17, 18, 14, 4, 9, 16, 15, 5, 8, 7, 6]
+
   var j = 0
   for (var row = 0; row < 5; row++) {
     for (var tile = 0; tile < number_in_row[row]; tile++) {
-      resource_locs[j] = [y, x]
-      number_locs[j] = [y + 75, x + 55]
+      resource_locs[board_order[j]] = [y, x]
+      number_locs[board_order[j]] = [y + 75, x + 55]
       x = x - 127 // move to the right
       j = j + 1
     }
     y = y + 105 // move down
     x = start[row + 1]
   }
+
+
 
   console.log(resource_locs);
 
@@ -361,3 +365,7 @@ function create_board() {
 }
 
 create_board()
+
+function buildSettlement() {
+  cxt.drawImage(two, 70, -1000, number_sizex, number_sizey)
+}
