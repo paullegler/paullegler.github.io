@@ -1,0 +1,14 @@
+#navbar {
+  position: fixed;
+  right: 0;
+  header: "Projects";
+}
+#profpic {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  float:center;
+}
+#proj {
+  margin: 0 25px 0 0;
+  text-align: right;
+}
