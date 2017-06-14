@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+      var openFile = function(event) {
+        var input = event.target;
+
+        var reader = new FileReader();
+        reader.onload = function(){
+          var text = reader.result;
+          var node = document.getElementById('output');
+          node.innerText = text;
+          console.log(reader.result.substring(0, 200));
+        };
+        reader.readAsText(input.files[0]);
+      };
+    </script>
+</head>
+
+<body>
+  <input type='file' accept='text/plain' onchange='openFile(event)'><br>
+    <div id='output'>
+    ...
+    </div>
+
+  <form action="/action_page.php">
+    First name: <input type="text" name="fname"><br>
+    Last name: <input type="text" name="lname"><br>
+    <input type="submit">
+  </form>
+
+  <canvas id="myCanvas" width="600" height="564"
+  style="border:1px solid #000000;">
+  </canvas>
+
+  <script>
+  var miss = new Image();
+  miss.src = "images/miss.png";
+  var make = new Image();
+  make.src = "images/make.png";
+  var court = new Image();
+  court.src = "images/court.png";
+
+
+  window.onload = function() {
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      // var miss = document.getElementById("miss");
+      ctx.drawImage(court, 0, 0, 600, 564);
+      ctx.drawImage(miss, 10, 10, 10, 10);
+      ctx.drawImage(make, 15, 15, 10, 10);
+  }
+
+
+  </script>
+
+</body>
+</html>
