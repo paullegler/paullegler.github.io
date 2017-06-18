@@ -6,25 +6,17 @@
   style="border:1px solid #000000;">
   </canvas>
 
-  <input type="file" name="file" id="file">
+  <!-- <input type="file" name="file" id="file"> -->
 
-  <script>
-  document.getElementById('file').onchange = function(){
-    var file = this.files[0];
-    var reader = new FileReader();
-    reader.onload = function(progressEvent){
-   alert(this.result);
-      // Entire file
-      console.log(this.result);
-
-      // By lines
-      var lines = this.result.split('\n');
-      for(var line = 0; line < lines.length; line++){
-        console.log(lines[line]);
-      }
-    };
-    reader.readAsText(file);
-  };
+  <input type="text" id="userInput"=>give me input</input>
+    <button onclick="test()">Submit</button>
+    <script>
+        function test()
+        {
+            var userInput = document.getElementById("userInput").value;
+            // this.files[0] = "jack_emup.txt";
+            alert(userInput);
+        }
 
   var miss = new Image();
   miss.src = "images/miss.png";
@@ -33,14 +25,35 @@
   var court = new Image();
   court.src = "images/court.png";
 
+  document.getElementById('userInput').onchange = function(){
+    // alert("reading a file");
+    // var f = new File([""], "jack_emup.txt");
+    // alert(this.files);
+    // this.files = ["jack_emup.txt"];
+    // alert(this.files);
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.onload = function(progressEvent){
+      var lines = this.result.split('\n');
+      for(var line = 1; line < lines.length; line++){
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var xyresult = lines[line].split(' ');
+        if (xyresult[2] == "make") {
+          ctx.drawImage(make, xyresult[0], xyresult[1], 10, 10);
+        } else {
+          ctx.drawImage(miss, xyresult[0], xyresult[1], 10, 10);
+        }
+
+      }
+    };
+    reader.readAsText(file);
+  };
 
   window.onload = function() {
       var c = document.getElementById("myCanvas");
       var ctx = c.getContext("2d");
-      // var miss = document.getElementById("miss");
       ctx.drawImage(court, 0, 0, 600, 564);
-      ctx.drawImage(miss, 10, 10, 10, 10);
-      ctx.drawImage(make, 15, 15, 10, 10);
   }
 
   </script>
