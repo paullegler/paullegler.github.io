@@ -6,17 +6,45 @@
   style="border:1px solid #000000;">
   </canvas>
 
-  <!-- <input type="file" name="file" id="file"> -->
 
-  <input type="text" id="userInput"=>give me input</input>
-    <button onclick="test()">Submit</button>
+
+  <input type="file" name="file" id="file">
+
+  <!-- <input type="text" id="userInput"=>give me input</input>
+    <button onclick="test()">Submit</button> -->
     <script>
-        function test()
-        {
-            var userInput = document.getElementById("userInput").value;
+        // function test()
+        // {
+            // var userInput = document.getElementById("userInput").value;
             // this.files[0] = "jack_emup.txt";
-            alert(userInput);
-        }
+            // alert(userInput);
+
+            document.getElementById('file').onchange = function(){
+
+              // alert("reading a file");
+              // // var f = new File([""], "jack_emup.txt");
+              // alert(this.files);
+              // this.files = ["jack_emup.txt"];
+              // alert(this.files);
+              var file = this.files[0];
+              var reader = new FileReader();
+              reader.onload = function(progressEvent){
+                var lines = this.result.split('\n');
+                for(var line = 1; line < lines.length; line++){
+                  var c = document.getElementById("myCanvas");
+                  var ctx = c.getContext("2d");
+                  var xyresult = lines[line].split(' ');
+                  if (xyresult[2] == "make") {
+                    ctx.drawImage(make, xyresult[0], xyresult[1], 10, 10);
+                  } else {
+                    ctx.drawImage(miss, xyresult[0], xyresult[1], 10, 10);
+                  }
+
+                }
+              };
+              reader.readAsText(file);
+            };
+        // }
 
   var miss = new Image();
   miss.src = "images/miss.png";
@@ -25,30 +53,7 @@
   var court = new Image();
   court.src = "images/court.png";
 
-  document.getElementById('userInput').onchange = function(){
-    // alert("reading a file");
-    // var f = new File([""], "jack_emup.txt");
-    // alert(this.files);
-    // this.files = ["jack_emup.txt"];
-    // alert(this.files);
-    var file = this.files[0];
-    var reader = new FileReader();
-    reader.onload = function(progressEvent){
-      var lines = this.result.split('\n');
-      for(var line = 1; line < lines.length; line++){
-        var c = document.getElementById("myCanvas");
-        var ctx = c.getContext("2d");
-        var xyresult = lines[line].split(' ');
-        if (xyresult[2] == "make") {
-          ctx.drawImage(make, xyresult[0], xyresult[1], 10, 10);
-        } else {
-          ctx.drawImage(miss, xyresult[0], xyresult[1], 10, 10);
-        }
 
-      }
-    };
-    reader.readAsText(file);
-  };
 
   window.onload = function() {
       var c = document.getElementById("myCanvas");
