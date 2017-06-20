@@ -1,4 +1,0 @@
-Jack Emup
-10 15 make
-13 7 miss
-7 40 make
