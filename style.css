@@ -1,4 +1,4 @@
-p {
+/*p {
     text-align:justify;
     margin: 0 20%;
     color:blue;
@@ -9,3 +9,6 @@ p {
     color: red;
     text-transform:uppercase;
 }
+.verticalLine {
+  border-left: thick solid #ff0000;
+}*/
