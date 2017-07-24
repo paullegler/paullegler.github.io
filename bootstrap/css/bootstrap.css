@@ -1080,17 +1080,16 @@ th {
 html {
   font-size: 10px;
   background: lightblue; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(lightblue, white); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(lightblue, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(lightblue, white); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(lightblue, white); /* Standard syntax (must be last) */
+  background: -webkit-linear-gradient(skyblue, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(skyblue, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(skyblue, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(skyblue, white); /* Standard syntax (must be last) */
   background-size: cover;
   margin: 0;
   height: 100%;
-  /*background-size: 100%;*/
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;

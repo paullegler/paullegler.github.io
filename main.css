@@ -26,3 +26,19 @@ hr {
   width: 2000;
   height: 2000;
 }
+#project-description {
+  text-align: left;
+  margin-left: 10px;
+  font-size: 12px;
+}
+#project-description-header {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 16px;
+}
+#home-button {
+  text-align: left;
+  margin-left: 20px;
+  position: fixed;
+  bottom: 20px;
+}
