@@ -3,7 +3,7 @@ import openpyxl
 import os
 
 def transfer(sheet, f):
-    row = 2
+    row = 1
     while (str(sheet["A" + str(row)].value) != "None"):
         x = str(sheet["A" + str(row)].value);
         y = str(sheet["B" + str(row)].value);
@@ -12,6 +12,9 @@ def transfer(sheet, f):
         row = row + 1
 
 directory = "players/excel/"
+
+leftCornerThree = [0, 25]
+rightCornerThree = [565, 590]
 
 for filename in os.listdir(directory):
     wb = openpyxl.load_workbook(directory + filename);
