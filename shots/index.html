@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html>
 
+<link href="style.css" rel="stylesheet">
+
 <body>
-  <canvas id="myCanvas" width="600" height="564"
-  style="border:1px solid #000000;">
-  </canvas>
+  <section class="container">
+    <div class="left-half">
+      <article>
+        <canvas id="myCanvas" width="600" height="564"
+        style="border:1px solid #000000;">
+        </canvas>
+      </article>
+    </div>
+    <div class="right-half">
+      <article>
+        <!-- <input type="file" name="file" id="file"> -->
+
+        Enter player name:
+        <input type="text" name="player" value="">
+
+        <input type="button" onclick="read()">Go</button>
+
+        <div id="three"></div>
+        <p id="mid"></p>
+        <p id="paint"></p>
+      </article>
+    </div>
+  </section>
 
 
-
-  <input type="file" name="file" id="file">
 
   <script>
-    document.getElementById('file').onchange = function(){
+  var percentages = {}
+
+
+
+    // document.getElementById('file').onchange = function(){
+    function read() {
+      var playerName = document.getElementById('player').value;
+      alert(playerName);
+
       var file = this.files[0];
       var reader = new FileReader();
       reader.onload = function(progressEvent){
@@ -22,14 +50,15 @@
           var xyresult = lines[line].split(' ');
           if (xyresult[2] == "make") {
             ctx.drawImage(make, xyresult[0], xyresult[1], 10, 10);
-          } else {
+          } else if (xyresult[2] == "miss") {
             ctx.drawImage(miss, xyresult[0], xyresult[1], 10, 10);
+          } else {
+            document.getElementById(xyresult[0]).innerHTML = xyresult[0] + ": " + xyresult[1];
           }
-
         }
-      };
+      }
       reader.readAsText(file);
-    };
+    }
 
     var miss = new Image();
     miss.src = "images/miss.png";
@@ -47,7 +76,6 @@
     }
 
   </script>
-
 
 <body>
 

@@ -20,17 +20,9 @@ def transfer(sheet, f):
         f.write(str(x) + " " + str(y) + " " + result + "\n");
         row = row + 1
 
-    print ("3s:")
-    print (results["three"][0] / (results["three"][0] + results["three"][1]))
-    print ()
-
-    print ("mids:")
-    print (results["mid"][0] / (results["mid"][0] + results["mid"][1]))
-    print ()
-
-    print ("paint:")
-    print (results["paint"][0] / (results["paint"][0] + results["paint"][1]))
-    print ()
+    f.write("three " + str(results["three"][0] / (results["three"][0] + results["three"][1])) + "\n")
+    f.write("mid " + str(results["mid"][0] / (results["mid"][0] + results["mid"][1])) + "\n")
+    f.write("paint " + str(results["paint"][0] / (results["paint"][0] + results["paint"][1])) + "\n")
 
 directory = "players/excel/"
 
@@ -49,7 +41,6 @@ rangeEnds = [92.5, 160, 220, 280, 310, 370, 430, 497.5, 565]
 
 def classify(x, y, result):
     if isThree(x, y):
-        print ("3", x, y)
         if (result == "make"): return ["three", "make"]
         else: return ["three", "miss"]
     if inPaint(x, y):
