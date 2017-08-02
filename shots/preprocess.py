@@ -26,6 +26,9 @@ def transfer(sheet, f):
         f.write(shotType + "-attempted " + str(int(values[1])) + "\n");
         f.write(shotType + "-percentage " + str(round(values[0]/values[1], 2)) + "\n");
 
+    f.write("player-name " + sheet["A" + str(1)].value + " " + sheet["B" + str(1)].value);
+
+
 directory = "players/excel/"
 
 equations = {}

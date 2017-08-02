@@ -85,3 +85,8 @@ table, td {
     margin-left: auto;
     margin-right: auto;
 }
+#player-name {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: black;
+}

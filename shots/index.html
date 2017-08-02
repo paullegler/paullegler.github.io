@@ -16,6 +16,8 @@
       Select player file:
       <input type="file" name="file" id="file">
       <article>
+        <div id="player-name"></div>
+
         <table id="myTable">
           <tr>
             <td><div id="three-made"></div></td>
@@ -60,7 +62,11 @@
           } else if (xyresult[2] == "miss") {
             ctx.drawImage(miss, xyresult[0], xyresult[1], 10, 10);
           } else {
+            if (xyresult[0] == "player-name") {
+              document.getElementById(xyresult[0]).innerHTML = xyresult[1] + " " + xyresult[2];
+            } else {
             document.getElementById(xyresult[0]).innerHTML = xyresult[1];
+            }
           }
         }
       }
