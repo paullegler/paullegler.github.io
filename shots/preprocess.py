@@ -14,15 +14,17 @@ def transfer(sheet, f):
         shot, result = classify(x, y, result)
         if (result == "make"):
             results[shot][0] += 1
+            results[shot][1] += 1
         else:
             results[shot][1] += 1
 
         f.write(str(x) + " " + str(y) + " " + result + "\n");
         row = row + 1
 
-    f.write("three " + str(results["three"][0] / (results["three"][0] + results["three"][1])) + "\n")
-    f.write("mid " + str(results["mid"][0] / (results["mid"][0] + results["mid"][1])) + "\n")
-    f.write("paint " + str(results["paint"][0] / (results["paint"][0] + results["paint"][1])) + "\n")
+    for shotType, values in results.items():
+        f.write(shotType + "-made " + str(values[0]) + "\n");
+        f.write(shotType + "-attempted " + str(values[1]) + "\n");
+        f.write(shotType + "-percentage " + str(round(values[0]/values[1], 2)) + "\n");
 
 directory = "players/excel/"
 

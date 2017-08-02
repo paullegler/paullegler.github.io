@@ -497,6 +497,12 @@
 366 216 miss
 205 394 make
 20 382 make
-three 0.529850746269
-mid 0.424124513619
-paint 0.481481481481
+paint-made 52.0
+paint-attempted 108.0
+paint-percentage 0.48
+mid-made 109.0
+mid-attempted 257.0
+mid-percentage 0.42
+three-made 71.0
+three-attempted 134.0
+three-percentage 0.53

@@ -51,6 +51,37 @@ h1 {
   right: 0px;
   width: 50%;
 }
-#three {
+#three-made {
   font-size: 20px;
+}
+#three-attempted {
+  font-size: 20px;
+}
+#three-percentage {
+  font-size: 20px;
+}
+#mid-made {
+  font-size: 20px;
+}
+#mid-attempted {
+  font-size: 20px;
+}
+#mid-percentage {
+  font-size: 20px;
+}
+#paint-made {
+  font-size: 20px;
+}
+#paint-attempted {
+  font-size: 20px;
+}
+#paint-percentage {
+  font-size: 20px;
+}
+table, td {
+    border: 1px solid black;
+    font-size: 16px;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
 }
