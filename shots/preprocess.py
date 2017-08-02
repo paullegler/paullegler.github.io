@@ -22,8 +22,8 @@ def transfer(sheet, f):
         row = row + 1
 
     for shotType, values in results.items():
-        f.write(shotType + "-made " + str(values[0]) + "\n");
-        f.write(shotType + "-attempted " + str(values[1]) + "\n");
+        f.write(shotType + "-made " + str(int(values[0])) + "\n");
+        f.write(shotType + "-attempted " + str(int(values[1])) + "\n");
         f.write(shotType + "-percentage " + str(round(values[0]/values[1], 2)) + "\n");
 
 directory = "players/excel/"
