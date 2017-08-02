@@ -14,12 +14,21 @@
     </div>
     <div class="right-half">
       <article>
-        <!-- <input type="file" name="file" id="file"> -->
+        <input type="file" name="file" id="file">
 
-        Enter player name:
-        <input type="text" name="player" value="">
+        <!-- Enter player name: -->
+        <form>
+        Select your favorite fruit:
+        <select id="mySelect">
+          <option>Mister Superman</option>
+          <option>Senor Wetball</option>
+        </select>
+        <br><br>
+        <input type="button" onclick="getOption()" value="Show shots">
+        </form>
 
-        <input type="button" onclick="read()">Go</button>
+        <p id="demo"></p>
+
 
         <div id="three"></div>
         <p id="mid"></p>
@@ -31,34 +40,39 @@
 
 
   <script>
-  var percentages = {}
+  var percentages = {};
+  var playername = "before";
 
+  function getOption() {
+    var obj = document.getElementById("mySelect");
+    document.getElementById("demo").innerHTML = obj.options[obj.selectedIndex].text;
+    playerName = obj.options[obj.selectedIndex].text;
+}
 
-
-    // document.getElementById('file').onchange = function(){
-    function read() {
-      var playerName = document.getElementById('player').value;
-      alert(playerName);
-
-      var file = this.files[0];
-      var reader = new FileReader();
-      reader.onload = function(progressEvent){
-        var lines = this.result.split('\n');
-        for(var line = 1; line < lines.length; line++){
-          var c = document.getElementById("myCanvas");
-          var ctx = c.getContext("2d");
-          var xyresult = lines[line].split(' ');
-          if (xyresult[2] == "make") {
-            ctx.drawImage(make, xyresult[0], xyresult[1], 10, 10);
-          } else if (xyresult[2] == "miss") {
-            ctx.drawImage(miss, xyresult[0], xyresult[1], 10, 10);
-          } else {
-            document.getElementById(xyresult[0]).innerHTML = xyresult[0] + ": " + xyresult[1];
-          }
-        }
-      }
-      reader.readAsText(file);
-    }
+  // document.getElementById('file').onchange = function(){
+  //     alert(playerName);
+  //     playerName = document.getElementById('player').value;
+  //     alert(playerName);
+  //
+  //     var file = this.files[0];
+  //     var reader = new FileReader();
+  //     reader.onload = function(progressEvent){
+  //       var lines = this.result.split('\n');
+  //       for(var line = 1; line < lines.length; line++){
+  //         var c = document.getElementById("myCanvas");
+  //         var ctx = c.getContext("2d");
+  //         var xyresult = lines[line].split(' ');
+  //         if (xyresult[2] == "make") {
+  //           ctx.drawImage(make, xyresult[0], xyresult[1], 10, 10);
+  //         } else if (xyresult[2] == "miss") {
+  //           ctx.drawImage(miss, xyresult[0], xyresult[1], 10, 10);
+  //         } else {
+  //           document.getElementById(xyresult[0]).innerHTML = xyresult[0] + ": " + xyresult[1];
+  //         }
+  //       }
+  //     }
+  //     reader.readAsText(file);
+  //   }
 
     var miss = new Image();
     miss.src = "images/miss.png";
