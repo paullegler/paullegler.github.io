@@ -2,6 +2,7 @@
 <html>
 
 <link href="style.css" rel="stylesheet">
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <body>
   <section class="container">
@@ -15,6 +16,8 @@
     <div class="right-half">
       Select player file:
       <input type="file" name="file" id="file">
+
+
       <article>
         <div id="player-name"></div>
 
@@ -31,7 +34,19 @@
             <td><div id="paint-percentage"></div></td>
           </tr>
         </table>
+
+        <div id="player-buttons">
+          To download some text files for example shooters:
+          <div id="player-button-wrapper"></div>
+            <div class="btn-group-sm" role="group" aria-label="...">
+              <button type="button" class="btn btn-default" onclick="window.location='players/text/Random_Shooter.txt';">Random Shooter</button>
+              <button type="button" class="btn btn-default" onclick="window.location='players/text/Left_Preferred.txt';">Left Preferred</button>
+              <button type="button" class="btn btn-default" onclick="window.location='players/text/Close_Preferred.txt';">Close Preferred</button>
+            </div>
+        </div>
       </article>
+
+
     </div>
   </section>
 

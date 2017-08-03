@@ -90,3 +90,12 @@ table, td {
   margin-bottom: 10px;
   color: black;
 }
+#file {
+  margin-left: 40%;
+}
+#player-buttons {
+  margin-top: 100px;
+}
+#player-button-wrapper {
+  margin-bottom: 10px;
+}

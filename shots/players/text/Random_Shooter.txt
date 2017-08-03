@@ -506,4 +506,4 @@ mid-percentage 0.42
 three-made 71
 three-attempted 134
 three-percentage 0.53
-player-name Mister Superman
+player-name Random Shooter
