@@ -23,6 +23,17 @@ function drawHex(size, xcenter, ycenter) {
   cxt.stroke();
 }
 
+class spot {
+  constructor() {
+    this.left = "";
+    this.right = "";
+    this.vertical = ""
+    this.leftNum = 0;
+    this.rightNum = 0;
+    this.verticalNum = 0;
+  }
+}
+var spots = [];
 // To go 1 right is 0, -87
 // To go to bottom left +75, +43
 
@@ -88,6 +99,10 @@ function locate_spots() {
 
 // locate_spots()
 
+function analyze(order) {
+  // alert(order)
+}
+
 function create_board() {
   // y_tp_ratio = 130 / 160.0
   // scale = 160
@@ -106,6 +121,7 @@ function create_board() {
   number_in_row = [3, 4, 5, 4, 3]
 
   board_order = [0, 1, 2, 11, 12, 13, 3, 10, 17, 18, 14, 4, 9, 16, 15, 5, 8, 7, 6]
+  var resourceToSpot = {0: [], 1, 2, 11, 12, 13, 3, 10, 17, 18, 14, 4, 9, 16, 15, 5, 8, 7, 6}
 
   var j = 0
   for (var row = 0; row < 5; row++) {
@@ -362,6 +378,7 @@ function create_board() {
   }
   order = shuffle(order)
   drawResources(order)
+  analyze(order)
 }
 
 create_board()
