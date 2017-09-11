@@ -1,0 +1,104 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Authors:
+% Claud D. Park <posquit0.bj@gmail.com>
+% Lars Richter <mail@ayeks.de>
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+\documentclass[11pt, a4paper]{awesome-cv}
+
+%%% Override a directory location for fonts(default: 'fonts/')
+\fontdir[fonts/]
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{cv/}
+
+\usepackage{amsmath}
+
+%%% Override color
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%% Color for highlight
+% Define your custom color if you don't like awesome colors
+\colorlet{awesome}{awesome-skyblue}
+%\definecolor{awesome}{HTML}{CA63A8}
+%% Colors for text
+%\definecolor{darktext}{HTML}{414141}
+%\definecolor{text}{HTML}{414141}
+%\definecolor{graytext}{HTML}{414141}
+%\definecolor{lighttext}{HTML}{414141}
+
+%%% Override a separator for social informations in header(default: ' | ')
+%\headersocialsep[\quad\textbar\quad]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Personal Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Essentials
+\name{Paul}{Legler}
+\position{Computer Science{\enskip\cdotp\enskip}Electrical Engineering}
+\address{1411 23rd St., Manhattan Beach, CA 90266}
+
+\mobile{310-200-7994}
+\email{plegler24@gmail.com}
+\homepage{paullegler.me}
+\github{paullegler}
+\linkedin{paul-legler}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Letter Data (Cover Letter)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\recipient
+  {Company Recruitment Team}
+  {Databricks Inc.\\}
+\letterdate{\today}
+\lettertitle{Job Application for Software Engineer}
+\letteropening{Dear Company Recruiter,}
+\letterclosing{Sincerely,}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
+\makecvfooter
+  {\today}
+  {Paul Legler~~~·~~~Cover Letter}
+  {}
+
+\begin{document}
+%%% Make a header for CV using personal data
+\makecvheader
+
+%%% Make a title for Cover Letter using letter data
+\makelettertitle
+
+%%% Write content for your cover letter
+\begin{cvletter}
+I am a senior majoring in Electrical Engineering and Computer Science at UC Berkeley. I particularly enjoyed courses in computer security and databases. This semester, I am an undergraduate teaching assistant for the computer security course (CS 161) at Berkeley, and I am enjoying deepening my understanding of security and creating course curriculum. I am also president of Coaching Corps at UC Berkeley, which helps underserved youth in the bay area by providing student volunteer coaches. Outside of academics, I also enjoy playing and coaching basketball, dancing, and playing guitar.
+
+I want to apply what I've learned and continue to develop at a company like Databricks. Databricks is a successful, growing company that I would love to be a part of and contribute to. Databricks must ensure the security of their data stored on the server, and also must ensure that information is stored efficiently to maximize capability. I could learn valuable skills at a forward thinking company like Dropbox that would help me grow as a programmer and as a person.
+
+Through my years at Berkeley and my four previous internships at Northrop Grumman, I have gained valuable experience that I am excited to demonstrate elsewhere. At Northrop Grumman, I have developed a number of tools aimed at increasing efficiency of other Northrop Grumman employees. For example, this summer I wrote a tool in Python and Visual Basic that provides predictions for important channel parameters like $\frac{\text{Carrier}}{\text{Noise}}$ ratio and $\frac{\text{Gain}}{\text{Temperature}}$ based on unit data, information in specification, and previous performance. Additionally, I rewrote some code that improved the modularity of encryption of data coming down from the spacecraft, which allowed for simpler decryption code, as well.
+
+\end{cvletter}
+
+%%% Make a closing for Cover Letter using letter data
+\makeletterclosing
+
+\end{document}
