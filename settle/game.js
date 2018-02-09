@@ -1,3 +1,5 @@
+// alert("test");
+
 var canvas = document.getElementById("Board");
 var cxt = canvas.getContext("2d");
 
@@ -100,12 +102,13 @@ function locate_spots() {
 // locate_spots()
 
 function analyze(order) {
-  // alert(order)
+  alert(order)
 }
 
 function create_board() {
-  // y_tp_ratio = 130 / 160.0
-  // scale = 160
+  y_tp_ratio = 130 / 160.0;
+  scale = 160;
+  // alert("test");
   resource_sizex = 180;
   resource_sizey = 140;
   number_sizex = 30;
@@ -121,7 +124,7 @@ function create_board() {
   number_in_row = [3, 4, 5, 4, 3]
 
   board_order = [0, 1, 2, 11, 12, 13, 3, 10, 17, 18, 14, 4, 9, 16, 15, 5, 8, 7, 6]
-  var resourceToSpot = {0: [], 1, 2, 11, 12, 13, 3, 10, 17, 18, 14, 4, 9, 16, 15, 5, 8, 7, 6}
+  // var resourceToSpot = {0: , 1, 2, 11, 12, 13, 3, 10, 17, 18, 14, 4, 9, 16, 15, 5, 8, 7, 6}
 
   var j = 0
   for (var row = 0; row < 5; row++) {
@@ -137,11 +140,11 @@ function create_board() {
 
 
 
-  console.log(resource_locs);
+  // console.log(resource_locs);
 
 
-  // var resource_locs = [[170, -320], [170, -448], [170, -570], [245, -541], [320, -585], [395, -541], [470, -496], [470, -408], [470, -320], [395, -277], [320, -233], [245, -277], [245, -365], [245, -453], [320, -497], [395, -453], [395, -365], [320, -321], [320, -409]];
-  // var number_locs  = [[145, -265], [185, -393], [185, -481], [260, -526], [335, -570], [410, -526], [485, -481], [485, -393], [485, -305], [410, -262], [335, -218], [260, -262], [260, -350], [260, -438], [335, -482], [410, -438], [410, -350], [335, -306], [335, -394]];
+  var resource_locs = [[170, -320], [170, -448], [170, -570], [245, -541], [320, -585], [395, -541], [470, -496], [470, -408], [470, -320], [395, -277], [320, -233], [245, -277], [245, -365], [245, -453], [320, -497], [395, -453], [395, -365], [320, -321], [320, -409]];
+  var number_locs  = [[145, -265], [185, -393], [185, -481], [260, -526], [335, -570], [410, -526], [485, -481], [485, -393], [485, -305], [410, -262], [335, -218], [260, -262], [260, -350], [260, -438], [335, -482], [410, -438], [410, -350], [335, -306], [335, -394]];
 
   var order = ['ore', 'sheep', 'wheat', 'ore', 'sheep', 'brick', 'wheat', 'wood', 'sheep', 'wheat', 'brick', 'desert', 'brick', 'wood', 'wood', 'sheep', 'wood', 'ore', 'wheat']
 
@@ -378,11 +381,9 @@ function create_board() {
   }
   order = shuffle(order)
   drawResources(order)
-  analyze(order)
+  // analyze(order)
 }
 
+
+// create_board();
 create_board()
-
-function buildSettlement() {
-  cxt.drawImage(two, 70, -1000, number_sizex, number_sizey)
-}
