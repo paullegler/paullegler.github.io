@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Calculate random number between 0 and n</h1>
+
+
+n: <input type="number" name="n" id="n"><br>
+
+<button onclick="tryRandomNumber(document.getElementById('n').value)">Calculate Random Number</button>
+
+<p id="result"></p>
+
+
+<script>
+/*
+Helper function to catch any errors for input not within range
+*/
+function tryRandomNumber(n) {
+	try {
+		randomNumber(n)
+	}
+	catch(e) {
+		document.getElementById("result").innerHTML = "Error: " + String(e);
+	}
+}
+
+/*
+Takes input n between 1 and 1,000,000
+Calculates a random number between these using powers of 2, with a coin flip at each power
+*/
+function randomNumber(n) {
+	if ((n < 1) || (n > 1000000)) {
+		throw "n not within range of [1, 1,000,000]";
+	}
+	n = parseInt(n);
+	var maximum = 1;
+	var power = 1;
+	while (maximum < n) {
+		maximum = maximum * 2;
+		power = power + 1;
+	}
+
+	var total = maximum + 1;
+	while (total >= n) {
+		total = 0;
+		for (i = 0; i < power; i++) { 
+	    	if (flip()) {
+	    		total = total + Math.pow(2, i);
+	    	}
+		}
+	}
+	document.getElementById("result").innerHTML = "Result: " + String(total);
+    return total;
+}
+
+/*
+Coin flip function that returns a boolean
+*/
+function flip() {
+	return Math.random() >= 0.5;
+}
+</script>
+
+</body>
+</html>
